@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smile Dental Studio | Modern Clinic in Phnom Penh</title>
+  <meta name="description" content="Premier dental clinic in BKK1, Phnom Penh. Gentle, pain-free dental care, teeth whitening, braces, and transparent pricing. Book instantly via Telegram.">
+
+  <!-- Google Fonts: Plus Jakarta Sans (English) & Kantumruy Pro (Khmer) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    :root {
+      --primary-color: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --secondary-color: #0f172a;
+      --accent-color: #10b981;
+      --accent-telegram: #229ED9;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --card-radius: 18px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', 'Kantumruy Pro', sans-serif;
+      color: #334155;
+      background-color: #f8fafc;
+      overflow-x: hidden;
+      padding-bottom: 70px; /* Space for mobile sticky footer */
+    }
+
+    @media (min-width: 768px) {
+      body {
+        padding-bottom: 0;
+      }
+    }
+
+    .khmer-font {
+      font-family: 'Kantumruy Pro', sans-serif;
+    }
+
+    /* Navbar */
+    .navbar {
+      backdrop-filter: blur(12px);
+      background-color: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      color: var(--secondary-color);
+      letter-spacing: -0.5px;
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary-color), #38bdf8);
+      color: white;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(180deg, #f0f9ff 0%, #f8fafc 100%);
+      padding: 70px 0 60px;
+      position: relative;
+    }
+
+    .badge-rating {
+      background-color: #fef3c7;
+      color: #b45309;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+    }
+
+    .hero-title {
+      font-weight: 800;
+      color: var(--secondary-color);
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    .hero-img-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.2);
+    }
+
+    .hero-img-card img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+    }
+
+    .hero-floating-stat {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 14px 20px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Buttons */
+    .btn-telegram {
+      background-color: var(--accent-telegram);
+      color: white;
+      font-weight: 700;
+      border-radius: 12px;
+      padding: 12px 24px;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 6px 20px rgba(34, 158, 217, 0.35);
+      transition: all 0.25s ease;
+    }
+
+    .btn-telegram:hover {
+      background-color: #1d8fc4;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(34, 158, 217, 0.45);
+    }
+
+    .btn-call {
+      background-color: white;
+      color: var(--secondary-color);
+      font-weight: 700;
+      border-radius: 12px;
+      padding: 12px 24px;
+      border: 1px solid var(--border-color);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .btn-call:hover {
+      background-color: #f1f5f9;
+      color: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+
+    /* Trust Feature Pills */
+    .trust-pill {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      height: 100%;
+    }
+
+    .trust-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--primary-light);
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    /* Service Cards */
+    .service-card {
+      background: white;
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(2, 132, 199, 0.1);
+      border-color: #bae6fd;
+    }
+
+    .service-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--primary-light);
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    .price-tag {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-color);
+    }
+
+    /* Doctor Card */
+    .doctor-card {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .doctor-img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+
+    /* Interactive Booking Modal / Box */
+    .booking-box {
+      background: white;
+      border-radius: 24px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+      padding: 32px;
+    }
+
+    /* Sticky Mobile Action Bar */
+    .mobile-bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1050;
+      background: white;
+      border-top: 1px solid var(--border-color);
+      padding: 10px 16px;
+      display: flex;
+      gap: 10px;
+      box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    @media (min-width: 768px) {
+      .mobile-bottom-bar {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-dark text-white py-2 px-3 small d-none d-md-block">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div>
+        <i class="bi bi-geo-alt-fill text-info me-1"></i> #42 St 288, BKK1, Phnom Penh
+        <span class="mx-2 text-secondary">•</span>
+        <i class="bi bi-clock-fill text-info me-1"></i> Open Daily: 8:00 AM – 7:30 PM
+      </div>
+      <div>
+        <a href="tel:+85512345678" class="text-white text-decoration-none me-3">
+          <i class="bi bi-telephone-fill text-success me-1"></i> +855 (0) 12 345 678
+        </a>
+        <a href="https://t.me/bNha_dev" target="_blank" class="text-info text-decoration-none">
+          <i class="bi bi-telegram me-1"></i> Telegram Support
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <div class="brand-icon">
+          <i class="bi bi-heart-pulse-fill"></i>
+        </div>
+        <div>
+          <span class="d-block lh-1">Smile Dental</span>
+          <span class="small text-muted khmer-font" style="font-size: 0.72rem; font-weight: 500;">ស្ទូឌីយោព្យាបាលធ្មេញ ភ្នំពេញ</span>
+        </div>
+      </a>
+
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <a href="#booking" class="btn btn-sm btn-telegram">
+          <i class="bi bi-telegram"></i> Book
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link fw-semibold" href="#services">Treatments</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="#pricing">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="#doctor">Our Doctors</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="#testimonials">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="#location">Location</a></li>
+          <li class="nav-item ms-lg-2">
+            <a href="#booking" class="btn btn-telegram">
+              <i class="bi bi-telegram"></i> Book via Telegram
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="badge-rating mb-3">
+            <i class="bi bi-star-fill text-warning"></i>
+            <span>4.9 / 5.0 (180+ Reviews on Google & Facebook)</span>
+          </div>
+          
+          <h1 class="hero-title mb-3">
+            Modern, Gentle & Pain-Free Dental Care in Phnom Penh
+          </h1>
+          
+          <p class="text-muted fs-5 mb-4">
+            International sterilization standards, compassionate dentists, and transparent prices. Book your consultation directly to our Telegram in 30 seconds.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3 mb-4">
+            <a href="#booking" class="btn btn-telegram btn-lg">
+              <i class="bi bi-telegram"></i> Book on Telegram
+            </a>
+            <a href="#pricing" class="btn btn-call btn-lg">
+              <i class="bi bi-tag-fill text-primary"></i> View Price List
+            </a>
+          </div>
+
+          <!-- Quick Trust Badges -->
+          <div class="d-flex flex-wrap align-items-center gap-4 pt-2 text-muted small">
+            <div><i class="bi bi-shield-check text-success me-1"></i> 100% Sterile Equipment</div>
+            <div><i class="bi bi-check-circle-fill text-primary me-1"></i> Transparent Pricing</div>
+            <div><i class="bi bi-translate text-info me-1"></i> Khmer & English</div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="hero-img-card">
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Smile Dental Studio Clinic Room">
+            <div class="hero-floating-stat">
+              <div class="brand-icon" style="background: #10b981;">
+                <i class="bi bi-emoji-smile-fill"></i>
+              </div>
+              <div>
+                <h6 class="mb-0 fw-bold">1,500+ Happy Smiles</h6>
+                <small class="text-muted">Treated with zero discomfort</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Highlights Grid -->
+  <section class="py-5 bg-white border-bottom border-top">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="trust-pill">
+            <div class="trust-icon">
+              <i class="bi bi-shield-lock-fill"></i>
+            </div>
+            <div>
+              <h6 class="fw-bold mb-1">European Autoclave Sterilization</h6>
+              <p class="text-muted small mb-0">Every instrument is 100% sterilized before each patient.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="trust-pill">
+            <div class="trust-icon">
+              <i class="bi bi-wallet2"></i>
+            </div>
+            <div>
+              <h6 class="fw-bold mb-1">Clear Upfront Pricing</h6>
+              <p class="text-muted small mb-0">No surprise bills. Know your cost before we begin any work.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="trust-pill">
+            <div class="trust-icon">
+              <i class="bi bi-lightning-charge-fill"></i>
+            </div>
+            <div>
+              <h6 class="fw-bold mb-1">Gentle & Pain-Free</h6>
+              <p class="text-muted small mb-0">Computerized anesthesia to ensure comfortable, stress-free visits.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatments & Pricing Menu -->
+  <section id="pricing" class="py-5">
+    <div class="container py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="text-primary fw-bold text-uppercase small tracking-wide">Honest & Transparent</span>
+        <h2 class="fw-bold display-6 mt-1 mb-2">Our Treatments & Prices</h2>
+        <p class="text-muted">Fair pricing with world-class dental materials. Select any service to book via Telegram.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Service 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card">
+            <div>
+              <div class="service-icon-box">
+                <i class="bi bi-stars"></i>
+              </div>
+              <h5 class="fw-bold mb-2">Checkup & Ultrasonic Scaling</h5>
+              <p class="text-muted small mb-3">Thorough dental examination, digital X-rays, plaque and tartar removal, followed by fluoridated polishing.</p>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3 pt-3 border-top">
+                <span class="text-muted small">Standard Rate</span>
+                <span class="price-tag">$15 – $25</span>
+              </div>
+              <button class="btn btn-outline-primary w-100 rounded-3 fw-bold" onclick="selectServiceForBooking('Dental Checkup & Scaling', '$15 - $25')">
+                <i class="bi bi-calendar-check me-1"></i> Book Scaling
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2 (Featured) -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card border-primary" style="box-shadow: 0 10px 30px rgba(2, 132, 199, 0.12);">
+            <div>
+              <span class="badge bg-primary mb-2">Most Popular</span>
+              <div class="service-icon-box" style="background: #e0f2fe; color: #0284c7;">
+                <i class="bi bi-brightness-high-fill"></i>
+              </div>
+              <h5 class="fw-bold mb-2">Laser Teeth Whitening</h5>
+              <p class="text-muted small mb-3">Safe, in-office laser whitening. Lightens your smile up to 8 shades in just 45 minutes with zero sensitivity.</p>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3 pt-3 border-top">
+                <span class="text-muted small">Full In-Clinic Package</span>
+                <span class="price-tag">$120</span>
+              </div>
+              <button class="btn btn-primary w-100 rounded-3 fw-bold" onclick="selectServiceForBooking('Laser Teeth Whitening', '$120')">
+                <i class="bi bi-calendar-check me-1"></i> Book Whitening
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card">
+            <div>
+              <div class="service-icon-box">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h5 class="fw-bold mb-2">Composite Dental Fillings</h5>
+              <p class="text-muted small mb-3">High-durability, tooth-colored composite resin to repair cavities and chips seamlessly matching your natural enamel.</p>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3 pt-3 border-top">
+                <span class="text-muted small">Per Tooth</span>
+                <span class="price-tag">From $20</span>
+              </div>
+              <button class="btn btn-outline-primary w-100 rounded-3 fw-bold" onclick="selectServiceForBooking('Dental Filling', 'From $20')">
+                <i class="bi bi-calendar-check me-1"></i> Book Filling
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card">
+            <div>
+              <div class="service-icon-box">
+                <i class="bi bi-gem"></i>
+              </div>
+              <h5 class="fw-bold mb-2">Porcelain / Zirconia Crowns</h5>
+              <p class="text-muted small mb-3">Restore severely damaged or weakened teeth with natural-looking, ultra-strong ceramic crowns engineered to last decades.</p>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3 pt-3 border-top">
+                <span class="text-muted small">Per Unit</span>
+                <span class="price-tag">From $150</span>
+              </div>
+              <button class="btn btn-outline-primary w-100 rounded-3 fw-bold" onclick="selectServiceForBooking('Porcelain Crown', 'From $150')">
+                <i class="bi bi-calendar-check me-1"></i> Book Crown
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card">
+            <div>
+              <div class="service-icon-box">
+                <i class="bi bi-grid-3x3"></i>
+              </div>
+              <h5 class="fw-bold mb-2">Orthodontics & Clear Aligners</h5>
+              <p class="text-muted small mb-3">Straighten misaligned teeth with metal braces or discreet clear aligners. Includes 3D scan and tailored smile design.</p>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3 pt-3 border-top">
+                <span class="text-muted small">Consultation & 3D Scan</span>
+                <span class="price-tag text-success">FREE</span>
+              </div>
+              <button class="btn btn-outline-primary w-100 rounded-3 fw-bold" onclick="selectServiceForBooking('Orthodontics / Braces Consultation', 'FREE')">
+                <i class="bi bi-calendar-check me-1"></i> Free Consultation
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card">
+            <div>
+              <div class="service-icon-box">
+                <i class="bi bi-bandaid"></i>
+              </div>
+              <h5 class="fw-bold mb-2">Wisdom Tooth Extraction</h5>
+              <p class="text-muted small mb-3">Gentle, minimally invasive oral surgery for impacted or painful wisdom teeth with rapid recovery protocols.</p>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3 pt-3 border-top">
+                <span class="text-muted small">Starting From</span>
+                <span class="price-tag">From $45</span>
+              </div>
+              <button class="btn btn-outline-primary w-100 rounded-3 fw-bold" onclick="selectServiceForBooking('Wisdom Tooth Extraction', 'From $45')">
+                <i class="bi bi-calendar-check me-1"></i> Book Extraction
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctor & Credibility Section -->
+  <section id="doctor" class="py-5 bg-white border-top border-bottom">
+    <div class="container py-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5">
+          <div class="doctor-card">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=700&q=80" alt="Dr. Sokha Meas Lead Dentist" class="doctor-img">
+            <div class="p-4">
+              <h5 class="fw-bold mb-1">Dr. Sokha Meas, DDS</h5>
+              <p class="text-primary fw-semibold small mb-2">Clinical Director & Aesthetic Dentist</p>
+              <div class="text-muted small">
+                <i class="bi bi-mortarboard-fill me-1"></i> University of Health Sciences, Phnom Penh<br>
+                <i class="bi bi-award-fill me-1"></i> 10+ Years of Clinical Experience<br>
+                <i class="bi bi-check2-circle me-1"></i> Member of Cambodian Dental Association
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <span class="text-primary fw-bold text-uppercase small tracking-wide">Meet Your Doctor</span>
+          <h2 class="fw-bold display-6 mt-1 mb-3">“Every patient deserves a healthy smile without fear or stress.”</h2>
+          <p class="text-muted fs-5 mb-4">
+            We understand dental anxiety. That is why our team prioritizes gentle care, explains every step in clear Khmer or English, and ensures zero unexpected charges before we start.
+          </p>
+
+          <div class="row g-3 mb-4">
+            <div class="col-sm-6">
+              <div class="p-3 bg-light rounded-3 border">
+                <div class="fw-bold text-dark fs-4">1,500+</div>
+                <div class="text-muted small">Successful Procedures</div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="p-3 bg-light rounded-3 border">
+                <div class="fw-bold text-dark fs-4">100%</div>
+                <div class="text-muted small">Sterile Single-Use Tool Kits</div>
+              </div>
+            </div>
+          </div>
+
+          <a href="#booking" class="btn btn-telegram">
+            <i class="bi bi-chat-dots-fill"></i> Ask Dr. Sokha a Question on Telegram
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Dynamic Booking Section -->
+  <section id="booking" class="py-5 bg-light">
+    <div class="container py-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="booking-box">
+            <div class="text-center mb-4">
+              <span class="badge bg-success-subtle text-success fw-bold px-3 py-2 rounded-pill mb-2">
+                <i class="bi bi-clock-history me-1"></i> Instant Response within 15 Minutes
+              </span>
+              <h3 class="fw-bold mb-1">Book Your Appointment via Telegram</h3>
+              <p class="text-muted small">Select your preferred treatment below. Clicking confirm will open Telegram with your details ready to send.</p>
+            </div>
+
+            <form id="bookingForm" onsubmit="handleBookingSubmit(event)">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold small">Your Name / ឈ្មោះ</label>
+                  <input type="text" id="patientName" class="form-control form-control-lg fs-6" placeholder="e.g. Sokha Chhay" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold small">Phone / Telegram Number</label>
+                  <input type="tel" id="patientPhone" class="form-control form-control-lg fs-6" placeholder="e.g. 012 345 678" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold small">Select Treatment</label>
+                  <select id="selectedTreatment" class="form-select form-select-lg fs-6" required>
+                    <option value="Checkup & Scaling ($15 - $25)">Checkup & Ultrasonic Scaling ($15 – $25)</option>
+                    <option value="Laser Teeth Whitening ($120)" selected>Laser Teeth Whitening ($120)</option>
+                    <option value="Composite Dental Filling (From $20)">Composite Dental Filling (From $20)</option>
+                    <option value="Porcelain Crown (From $150)">Porcelain Crown (From $150)</option>
+                    <option value="Orthodontics / Braces Consultation (FREE)">Orthodontics / Braces Consultation (FREE)</option>
+                    <option value="Wisdom Tooth Extraction (From $45)">Wisdom Tooth Extraction (From $45)</option>
+                    <option value="General Consultation">Other Consultation</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold small">Preferred Date & Time</label>
+                  <select id="preferredTime" class="form-select form-select-lg fs-6" required>
+                    <option value="Today - Afternoon">Today — Afternoon (2:00 PM – 5:00 PM)</option>
+                    <option value="Tomorrow - Morning">Tomorrow — Morning (9:00 AM – 12:00 PM)</option>
+                    <option value="Tomorrow - Afternoon">Tomorrow — Afternoon (2:00 PM – 5:00 PM)</option>
+                    <option value="This Saturday">This Saturday</option>
+                    <option value="This Sunday">This Sunday</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label fw-semibold small">Special Notes (Optional)</label>
+                  <input type="text" id="patientNote" class="form-control form-control-lg fs-6" placeholder="e.g. sensitive teeth, first time visiting">
+                </div>
+
+                <div class="col-12 pt-2">
+                  <button type="submit" id="submitBookingBtn" class="btn btn-primary btn-lg w-100 justify-content-center py-3 shadow-sm fw-bold">
+                    <i class="bi bi-send-check-fill me-2"></i> Submit Appointment Request
+                  </button>
+                  <div class="text-center text-muted small mt-2">
+                    <i class="bi bi-shield-check text-success me-1"></i> Instant notification sent directly to clinic scheduling manager.
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Hours Section -->
+  <section id="location" class="py-5 bg-white border-top">
+    <div class="container py-4">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5">
+          <span class="text-primary fw-bold text-uppercase small tracking-wide">Visit Us</span>
+          <h2 class="fw-bold display-6 mt-1 mb-3">Conveniently Located in BKK1, Phnom Penh</h2>
+          
+          <div class="mb-4">
+            <h6 class="fw-bold mb-1"><i class="bi bi-geo-alt-fill text-danger me-2"></i> Address</h6>
+            <p class="text-muted">#42, Street 288, Boeung Keng Kang 1 (BKK1), Khan Chamkarmon, Phnom Penh, Cambodia</p>
+          </div>
+
+          <div class="mb-4">
+            <h6 class="fw-bold mb-1"><i class="bi bi-clock-fill text-primary me-2"></i> Opening Hours</h6>
+            <p class="text-muted mb-0">Monday – Saturday: 8:00 AM – 7:30 PM</p>
+            <p class="text-muted">Sunday: 8:30 AM – 5:00 PM</p>
+          </div>
+
+          <div class="mb-4">
+            <h6 class="fw-bold mb-1"><i class="bi bi-p-square-fill text-success me-2"></i> Parking & Accessibility</h6>
+            <p class="text-muted">Free car and motorcycle parking available on premises. Easy drop-off for Grab & PassApp.</p>
+          </div>
+
+          <div class="d-flex gap-3">
+            <a href="tel:+85512345678" class="btn btn-call">
+              <i class="bi bi-telephone-fill text-success"></i> Call Clinic
+            </a>
+            <a href="https://maps.google.com" target="_blank" class="btn btn-outline-secondary">
+              <i class="bi bi-map"></i> Open in Google Maps
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="rounded-4 overflow-hidden shadow-sm border" style="height: 380px;">
+            <!-- Embedded Google Maps iframe -->
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.976587391942!2d104.92138767576595!3d11.553531388656112!2m3!1f0!2f0!3f0!3m2!1i1024!2f768!4f13.1!3m3!1m2!1s0x31095130b91d24ef%3A0x7d2f9543e4905cf5!2sBoeung%20Keng%20Kang%201%2C%20Phnom%20Penh!5e0!3m2!1sen!2skh!4v1710000000000!5m2!1sen!2skh" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row g-4 justify-content-between">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="brand-icon">
+              <i class="bi bi-heart-pulse-fill"></i>
+            </div>
+            <h5 class="fw-bold mb-0 text-white">Smile Dental Studio</h5>
+          </div>
+          <p class="text-secondary small">
+            Dedicated to providing comfortable, high-quality, and ethical dental care for Cambodian families and expatriates.
+          </p>
+          <div class="text-secondary small">
+            © 2026 Smile Dental Studio Phnom Penh. All rights reserved.
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h6 class="fw-bold text-white mb-3">Quick Navigation</h6>
+          <ul class="list-unstyled text-secondary small d-flex flex-column gap-2">
+            <li><a href="#services" class="text-secondary text-decoration-none">Treatments & Pricing</a></li>
+            <li><a href="#doctor" class="text-secondary text-decoration-none">Our Doctors</a></li>
+            <li><a href="#booking" class="text-secondary text-decoration-none">Telegram Appointment</a></li>
+            <li><a href="#location" class="text-secondary text-decoration-none">Location & Hours</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <h6 class="fw-bold text-white mb-3">Direct Contact</h6>
+          <p class="text-secondary small mb-1"><i class="bi bi-telephone text-info me-2"></i> +855 (0) 12 345 678</p>
+          <p class="text-secondary small mb-1"><i class="bi bi-telegram text-info me-2"></i> @bNha_dev (Demo Support)</p>
+          <p class="text-secondary small"><i class="bi bi-geo-alt text-info me-2"></i> BKK1, Phnom Penh, Cambodia</p>
+          <div class="pt-2">
+            <span class="badge bg-secondary text-light">Built by bNha Web Developer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile Action Bar (Visible on mobile screens) -->
+  <div class="mobile-bottom-bar">
+    <a href="tel:+85512345678" class="btn btn-light flex-grow-1 border fw-bold d-flex align-items-center justify-content-center gap-2">
+      <i class="bi bi-telephone-fill text-success"></i> Call Clinic
+    </a>
+    <a href="#booking" class="btn btn-telegram flex-grow-1 fw-bold justify-content-center">
+      <i class="bi bi-telegram"></i> Book on Telegram
+    </a>
+  </div>
+
+  <!-- Success Confirmation Modal -->
+  <div class="modal fade" id="bookingSuccessModal" tabindex="-1" aria-labelledby="bookingSuccessModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow-lg">
+        <div class="modal-body text-center p-4 p-md-5">
+          <div class="mb-3 d-inline-flex align-items-center justify-content-center bg-success-subtle text-success rounded-circle" style="width: 72px; height: 72px; font-size: 2.25rem;">
+            <i class="bi bi-check-circle-fill"></i>
+          </div>
+          
+          <h3 class="fw-bold mb-1" id="bookingSuccessModalLabel">Request Received!</h3>
+          <p class="text-muted khmer-font small mb-3">ការកក់ត្រូវបានបញ្ជូនជោគជ័យ</p>
+
+          <p class="text-muted mb-4">
+            Thank you, <strong id="modalPatientName" class="text-dark">Patient</strong>. Our clinic manager has received your appointment request and will contact you at <strong id="modalPatientPhone" class="text-dark">Phone</strong> within <strong>15 minutes</strong> to confirm your slot.
+          </p>
+
+          <div class="bg-light rounded-3 p-3 text-start small mb-4 border">
+            <div class="d-flex justify-content-between mb-1">
+              <span class="text-muted">Treatment:</span>
+              <span class="fw-bold text-dark" id="modalTreatment">-</span>
+            </div>
+            <div class="d-flex justify-content-between mb-1">
+              <span class="text-muted">Preferred Time:</span>
+              <span class="fw-bold text-dark" id="modalTime">-</span>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span class="text-muted">Location:</span>
+              <span class="fw-bold text-dark">BKK1, Phnom Penh</span>
+            </div>
+          </div>
+
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-primary btn-lg rounded-3 fw-bold" data-bs-dismiss="modal">
+              Done & Close
+            </button>
+            <a id="modalDirectChatBtn" href="https://t.me/bNha_dev" target="_blank" class="btn btn-light border rounded-3 text-muted small">
+              <i class="bi bi-telegram text-info me-1"></i> Have an urgent question? Chat on Telegram
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Interactive Telegram Bot Integration -->
+  <script>
+    // Live Telegram Bot Credentials
+    const TELEGRAM_BOT_TOKEN = "8407260653:AAF4Ys0ZLGro9oCAr_wZgXkMpwnG8JkrcE0";
+    const TELEGRAM_CHAT_ID = "-1004328071470";
+    const CLINIC_TELEGRAM_HANDLE = "bNha_dev";
+
+    // Auto-scroll and pre-select service when clicking cards
+    function selectServiceForBooking(serviceName, price) {
+      const selectElement = document.getElementById("selectedTreatment");
+      
+      // Match option
+      for (let i = 0; i < selectElement.options.length; i++) {
+        if (selectElement.options[i].text.includes(serviceName)) {
+          selectElement.selectedIndex = i;
+          break;
+        }
+      }
+
+      // Smooth scroll to booking box
+      document.getElementById("booking").scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Silent Background Submission to Telegram Bot
+    async function handleBookingSubmit(event) {
+      event.preventDefault();
+
+      const submitBtn = document.getElementById("submitBookingBtn");
+      const originalBtnHtml = submitBtn.innerHTML;
+
+      const name = document.getElementById("patientName").value.trim();
+      const phone = document.getElementById("patientPhone").value.trim();
+      const treatment = document.getElementById("selectedTreatment").value;
+      const time = document.getElementById("preferredTime").value;
+      const note = document.getElementById("patientNote").value.trim();
+
+      // Show loading spinner
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Sending to Clinic...`;
+
+      // Construct Telegram Markdown message
+      let text = `🏥 *NEW CLINIC APPOINTMENT REQUEST*\n`;
+      text += `━━━━━━━━━━━━━━━━━━━━━\n`;
+      text += `👤 *Patient:* ${name}\n`;
+      text += `📞 *Phone:* ${phone}\n`;
+      text += `🦷 *Treatment:* ${treatment}\n`;
+      text += `⏰ *Preferred Time:* ${time}\n`;
+      if (note) {
+        text += `📝 *Notes:* ${note}\n`;
+      }
+      text += `━━━━━━━━━━━━━━━━━━━━━\n`;
+      text += `🌐 *Source:* Smile Dental Studio Web Demo`;
+
+      try {
+        const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: text,
+            parse_mode: 'Markdown'
+          })
+        });
+
+        const result = await response.json();
+
+        if (result.ok) {
+          // Populate and show success confirmation modal
+          document.getElementById("modalPatientName").textContent = name;
+          document.getElementById("modalPatientPhone").textContent = phone;
+          document.getElementById("modalTreatment").textContent = treatment;
+          document.getElementById("modalTime").textContent = time;
+
+          const modalElement = document.getElementById('bookingSuccessModal');
+          const successModal = new bootstrap.Modal(modalElement);
+          successModal.show();
+
+          // Reset form inputs
+          document.getElementById("bookingForm").reset();
+        } else {
+          console.error("Telegram API Error:", result);
+          alert("Notice: Telegram could not deliver the notification (" + (result.description || "Unknown error") + "). Please ensure you have tapped /start on your bot in Telegram first!");
+        }
+      } catch (error) {
+        console.error("Network / Fetch Error:", error);
+        alert("Network error sending notification. Please check your internet connection.");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      }
+    }
+  </script>
+</body>
+</html>
