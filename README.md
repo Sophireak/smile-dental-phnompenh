@@ -11,8 +11,8 @@
 
 <div align="center">
   <br>
-  <img src="demo.gif" alt="Smile Dental Studio Mobile Walkthrough Demo" width="320" style="border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" />
-  <p><em>📱 Mobile UI & Treatment Showcase Demo</em></p>
+  <img src="screenshot_hero.png" alt="Smile Dental Studio Mobile Interface" width="320" style="border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);" />
+  <p><em>📱 Mobile UI Preview</em></p>
 </div>
 
 ---
