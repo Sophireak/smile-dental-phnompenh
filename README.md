@@ -1,31 +1,37 @@
 # 🦷 Smile Dental Studio — Phnom Penh
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-smile--dental--phnompenh.vercel.app-0284c7?style=for-the-badge&logo=vercel&logoColor=white)](https://smile-dental-phnompenh.vercel.app/)
+[![Telegram Bot](https://img.shields.io/badge/Telegram_Bot-Integrated-229ED9?style=for-the-badge&logo=telegram&logoColor=white)](https://smile-dental-phnompenh.vercel.app/#booking)
+[![Status](https://img.shields.io/badge/Status-Production_Ready-10b981?style=for-the-badge)]()
+
 > A modern, mobile-first clinic landing page featuring transparent pricing and automated background Telegram Bot appointment notifications.
-> Built as **Project 1** in the client-ready freelance portfolio series.
+> **Project 1** in the Client-Ready Portfolio Series for Cambodian Businesses.
+
+🔗 **Live Production URL**: [https://smile-dental-phnompenh.vercel.app/](https://smile-dental-phnompenh.vercel.app/)
 
 ---
 
 ## 🌟 Overview & Case Study
 
 ### The Problem
-Small businesses and clinics in Cambodia often struggle with scattered customer inquiries on Facebook Messenger. Patients frequently ask the same repetitive questions (*"How much for scaling?"*, *"How much for whitening?"*), and receptionists miss leads during busy clinic hours.
+Small businesses and medical/dental clinics in Cambodia often struggle with scattered customer inquiries on Facebook Messenger. Patients frequently ask the same repetitive questions (*"How much for scaling?"*, *"How much for whitening?"*), and receptionists miss leads during busy clinic hours.
 
 ### The Solution
 A lightweight, high-converting landing page tailored for local clinics that:
-1. Displays clear, upfront treatment pricing to eliminate customer hesitation.
-2. Uses a dynamic booking system that sends instant notifications directly into the clinic staff's **Telegram group** in the background.
-3. Provides a seamless mobile experience with one-tap calling and bilingual typography (English + Khmer).
+1. **Displays transparent upfront pricing** to eliminate customer hesitation and reduce repetitive price inquiries.
+2. **Features an automated Telegram booking engine** that sends instant notifications directly into the clinic staff's **Telegram supergroup** in the background.
+3. **Delivers an app-like mobile experience** with one-tap calling, bilingual typography (English + Khmer), and zero loading lag.
 
 ---
 
 ## 🚀 Key Features
 
-* **⚡ Zero-Server Architecture**: Runs 100% in the browser with no monthly backend server hosting costs.
-* **🤖 Silent Background Telegram Bot API**: Sends patient name, phone number, selected treatment, and preferred time slot directly into a clinic Telegram supergroup.
-* **🇰🇭 Bilingual Typography**: Uses **Plus Jakarta Sans** for modern English UI and **Kantumruy Pro** for clean Khmer rendering.
-* **📱 100% Mobile-First**: Tested across smartphone screens with a sticky bottom action bar (One-tap call + Telegram).
-* **💎 Interactive Treatment Selector**: Clicking any service card automatically scrolls down and pre-selects the treatment in the booking form.
-* **✅ Feedback UI**: Displays dynamic loading spinners and a bootstrap confirmation modal upon successful booking.
+* **⚡ Secure Serverless Architecture**: Client frontend calls `/api/book` running on Vercel Serverless (Node.js). Zero API tokens or group IDs are exposed to the public browser.
+* **🤖 Silent Background Telegram Bot API**: Submitting an appointment silently formats a clean Markdown card with patient name, phone, chosen treatment, and preferred time, pinging the staff group instantly.
+* **🇰🇭 Bilingual Typography**: Powered by Google Fonts — **Plus Jakarta Sans** for modern international UI and **Kantumruy Pro** for clean Khmer text rendering.
+* **📱 100% Mobile-First**: Built with a sticky bottom action bar (One-tap call + Telegram) optimized for Cambodian smartphone users (Smart, Cellcard, Metfone networks).
+* **💎 Interactive Treatment Selector**: Clicking any service card automatically smooth-scrolls and pre-selects the treatment in the booking form.
+* **✅ Feedback UI**: Displays dynamic loading spinners and an animated Bootstrap confirmation modal upon successful booking.
 
 ---
 
@@ -34,8 +40,9 @@ A lightweight, high-converting landing page tailored for local clinics that:
 * **Frontend**: HTML5, CSS3, Bootstrap 5.3 (CDN)
 * **Icons**: Bootstrap Icons
 * **Typography**: Google Fonts (*Plus Jakarta Sans* & *Kantumruy Pro*)
-* **APIs**: Telegram Bot API (`sendMessage` HTTP endpoint)
-* **Hosting**: GitHub Pages / Vercel / Netlify (100% Free Tier, $0 cost)
+* **Backend**: Vercel Serverless Function (`/api/book.js` on Node.js)
+* **Third-Party API**: Telegram Bot API (`sendMessage` endpoint)
+* **Hosting**: Vercel Global Edge Network ($0 cost, Free SSL)
 
 ---
 
@@ -43,42 +50,46 @@ A lightweight, high-converting landing page tailored for local clinics that:
 
 ```text
 smile-dental-phnompenh/
-├── index.html       # Single-page web application with embedded styling & JS logic
-└── README.md        # Project documentation & portfolio case study
+├── index.html           # Single-page client application with interactive booking logic
+├── api/
+│   └── book.js          # Secure serverless function (forwards bookings to Telegram)
+├── .env.example         # Environment variable template
+├── .gitignore           # Protects secret tokens from being committed
+└── README.md            # Portfolio case study & documentation
 ```
 
 ---
 
 ## 💻 How to Run Locally
 
-No build tools or Node.js required. Simply clone and open:
-
 ```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/smile-dental-phnompenh.git
+# 1. Clone the repository
+git clone https://github.com/Sophireak/smile-dental-phnompenh.git
 
-# Open the folder
+# 2. Enter directory
 cd smile-dental-phnompenh
 
-# Open in browser (macOS)
+# 3. Open directly in browser (macOS)
 open index.html
 ```
 
 ---
 
-## 🌐 100% Free Deployment Options
+## ⚙️ Environment Variables (Vercel)
 
-### Method A: GitHub Pages (Recommended)
-1. Push this folder to a public GitHub repository.
-2. Go to **Settings** > **Pages** > Select `main` branch > **Save**.
-3. Live in 60 seconds at `https://YOUR_USERNAME.github.io/smile-dental-phnompenh/`.
+To route booking notifications to your own Telegram group, set these two environment variables in your **Vercel Project Settings > Environment Variables**:
 
-### Method B: Netlify Drop (30-second drag-and-drop)
-1. Open [app.netlify.com/drop](https://app.netlify.com/drop).
-2. Drag and drop the `smile-dental-phnompenh` folder into the browser.
-3. Instant free live HTTPS URL with zero configuration.
+| Variable | Description |
+| :--- | :--- |
+| `TELEGRAM_BOT_TOKEN` | Token provided by `@BotFather` (e.g. `123456:ABC-DEF...`) |
+| `TELEGRAM_CHAT_ID` | Telegram Group ID (e.g. `-100xxxxxxxxxx`) or User ID |
 
 ---
 
-**Author**: bNha — Web Developer  
-*Part of the Weekend Freelance Portfolio Series*
+## 👨‍💻 Developer & Portfolio
+
+* **Developer**: Sophireak (bNha Web Developer)
+* **Focus**: High-conversion business websites, appointment systems, and Telegram integrations for Cambodian SMEs.
+* **Part of**: *Weekend Freelance Web Developer Roadmap (Project 1)*
+
+[![Visit Live Website](https://img.shields.io/badge/Open_Website-smile--dental--phnompenh.vercel.app-0284c7?style=for-the-badge&logo=vercel&logoColor=white)](https://smile-dental-phnompenh.vercel.app/)
